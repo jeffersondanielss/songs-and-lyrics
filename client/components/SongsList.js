@@ -4,7 +4,6 @@ import { graphql } from 'react-apollo';
 
 class SongsList extends Component {
   renderSongs() {
-    console.log(this.props.data)
     return this.props.data.songs.map( song => {
       return (
         <li key={song.id} className="collection-item">
