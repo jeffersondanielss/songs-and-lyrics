@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { Link, hashHistory } from 'react-router';
 import query from '../queries/fetchSongs'
+import addSong from '../mutations/addSong'
+import Header from './header'
 
 class SongCreate extends Component {
+  
   constructor(props){
     super(props)
 
@@ -24,8 +26,15 @@ class SongCreate extends Component {
   render() {
     return (
       <div>
-        <Link to="/">Back</Link>
-        <h3> Create new song</h3>
+        <Header title="Songs" />
+        
+        <Link to="/">
+          <i className="material-icons">
+            arrow_back
+          </i>
+        </Link>
+        
+        <h4 className="section-title">Create new song</h4>
         <form onSubmit={ this.onSubmit.bind(this) }>
           <label>Song Title:</label>
           <input
@@ -39,14 +48,4 @@ class SongCreate extends Component {
 
 }
 
-const mutation = gql`
-
-  mutation addSong($title: String){
-    addSong(title: $title) {
-      title
-    }
-  }
-
-`;
-
-export default graphql(mutation)(SongCreate);
+export default graphql(addSong)(SongCreate);

@@ -1,8 +1,52 @@
+.header {
+  padding: 20px;
+  font-size: 60px;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .collection-item {
   display: flex;
   justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.collection-link {
+  color: #555;
 }
 
 .material-icons {
   cursor: pointer;
+  margin-right: 5px;
+  color: #555;
+}
+
+.vote-box {
+  display: flex;
+  align-items: center;
+}
+
+.add-lyric-form {
+  margin-top: 90px;
+}
+
+.section-title {
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+.likes {
+  width: 20px;
+  text-align: right;
 }
