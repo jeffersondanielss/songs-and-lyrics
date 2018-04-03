@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo'
+import query from '../queries/fetchSongs'
 
 class LyricCreate extends Component {
   constructor(props) {
     super(props)
 
     this.state = { content: '' }
-    console.log( this.props )
   }
 
   onSubmit(event) {
@@ -31,6 +31,7 @@ class LyricCreate extends Component {
             type="text"
             value={ this.state.content }
             onChange={ event => this.setState({ content: event.target.value }) }
+            required
           />
         </form>
       </div>
@@ -43,6 +44,7 @@ const mutation = gql`
     addLyricToSong(content: $content, songId: $songId) {
       id
         lyrics {
+          id
           content
         }
     }
