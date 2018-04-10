@@ -32,6 +32,9 @@ class LyricCreate extends Component {
             onChange={ event => this.setState({ content: event.target.value }) }
             required
           />
+          <button type="submit" className="btn-floating btn-large red right">
+            <i className="material-icons">send</i>
+          </button>
         </form>
       </div>
     )

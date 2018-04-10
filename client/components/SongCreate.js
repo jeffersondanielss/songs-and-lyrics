@@ -41,6 +41,9 @@ class SongCreate extends Component {
             onChange={ event => this.setState({ title: event.target.value }) }
             value={ this.state.title }
           />
+          <button type="submit" className="btn-floating btn-large red right">
+            <i className="material-icons">send</i>
+          </button>
         </form>
       </div>
     )

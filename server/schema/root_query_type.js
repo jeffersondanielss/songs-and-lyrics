@@ -5,10 +5,17 @@ const SongType = require('./song_type');
 const LyricType = require('./lyric_type');
 const Lyric = mongoose.model('lyric');
 const Song = mongoose.model('song');
+const userType = require('./user_type')
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: () => ({
+    user: {
+      type: userType,
+      resolve(parentValue, args, req) {
+        return req.user;
+      }
+    },
     songs: {
       type: new GraphQLList(SongType),
       resolve() {

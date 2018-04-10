@@ -24,7 +24,7 @@ class SongDetail extends Component {
         </Link>
 
         <h3 className="section-title">{ song.title }</h3>
-        <LyricList lyrics={ song.lyrics } />
+        <LyricList songId={ this.props.params.id } lyrics={ song.lyrics } />
         <LyricCreate songId={ this.props.params.id } />
       </div>
     )
