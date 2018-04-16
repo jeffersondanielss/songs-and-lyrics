@@ -1,13 +1,19 @@
 # Songs & lyrics
-Starter project from a GraphQL course on [Udemy.com](https://www.udemy.com/graphql-with-react-course) with react and Apollo.
+Project from a GraphQL course on [Udemy.com](https://www.udemy.com/graphql-with-react-course) with react and Apollo.
 
 <center>
   <img src="preview.png">
 </center>
 
-Novidades:
+New features:
 - Delete Lyric
-- junção do projeto login e lyrics
-- Alerts de sucesso e erro ( TODO )
-- inline styles
+- project login and lyrics
+- Errors alert
 - new styles
+
+## Get Started
+Installing and running the project.
+
+```
+npm run start
+```

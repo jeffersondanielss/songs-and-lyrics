@@ -5,6 +5,7 @@ import currentUser from '../queries/currentUser'
 import { graphql } from 'react-apollo'
 import { router } from 'react-router'
 import { hashHistory } from 'react-router'
+import Title from './title'
 
 class SignupForm extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class SignupForm extends Component {
   render() {
     return (
       <div className="container">
-        <h3 className="title">Signup</h3>
+        <Title name="Signup" />
         
         <AuthForm path={ this.props.route.path } errors={ this.state.errors } onSubmit={ this.onSubmit.bind(this) }/>
       </div>

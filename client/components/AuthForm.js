@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import Alert from './Alert'
 
 class AuthForm extends Component {
 
@@ -27,7 +28,6 @@ class AuthForm extends Component {
               placeholder="Email"
               onChange={ event => this.setState({ email: event.target.value }) }
               value={ this.state.email }
-              required
             />
           </div>
 
@@ -37,13 +37,10 @@ class AuthForm extends Component {
               type="password"
               onChange={ event => this.setState({ password: event.target.value }) }
               value={ this.state.password }
-              required
             />
           </div>
           
-          <div className="errors">
-            { this.props.errors.map( error => <div key={error}>{ error }</div> ) }
-          </div>
+          <Alert type="errors" messages={ this.props.errors } />
 
           <Link to={ label }>{ label }</Link>
           <button className="btn right">submit</button>

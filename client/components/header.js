@@ -3,6 +3,8 @@ import currentUser from '../queries/currentUser'
 import { graphql } from 'react-apollo'
 import Logout from '../mutations/Logout'
 import { hashHistory } from 'react-router'
+import Title from './title'
+
 
 class Header extends Component {
   constructor(props) {
@@ -18,7 +20,7 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        { this.props.title }
+        <Title name={ this.props.title } />
         <small>Welcome, { this.props.data.user.email }!</small>
         <i
           className="material-icons icon-logout"

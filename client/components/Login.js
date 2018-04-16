@@ -4,6 +4,7 @@ import Login from '../mutations/Login'
 import currentUser from '../queries/currentUser'
 import { graphql } from 'react-apollo'
 import { hashHistory } from 'react-router'
+import Title from './title'
 
 class LoginForm extends Component {
   constructor(props) {
@@ -21,18 +22,24 @@ class LoginForm extends Component {
     this.props.mutate({
       variables: { email, password },
       refetchQueries: [{ query: currentUser }]
+
     }).catch(res => {
       const errors = res.graphQLErrors.map( ({ message }) => message) 
       this.setState({ errors })
+
     })
   }
 
   render() {
     return (
       <div className="container">
-        <h3 className="title">Login</h3>
+        <Title name="Login" />
         
-        <AuthForm path={ this.props.route.path } errors={ this.state.errors } onSubmit={ this.onSubmit.bind(this) }/>
+        <AuthForm
+          path={ this.props.route.path }
+          errors={ this.state.errors }
+          onSubmit={ this.onSubmit.bind(this) }
+        />
       </div>
     )
   }
